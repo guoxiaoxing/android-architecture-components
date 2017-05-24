@@ -13,15 +13,15 @@
 
 >作者的文章首发在[Github](https://github.com/guoxiaoxing)上，也会发在[简书](http://www.jianshu.com/users/66a47e04215b/latest_articles)与[CSDN](http://blog.csdn.net/allenwells)平台上，文章内容主要包含Android/Linux, Java/Kotlin/JVM，Python, JavaScript/React/ReactNative, 数据结构与算法等方面的内容。如果有什么问题，也欢迎发邮件与我交流。
 
+Android应用开发架构一直没有一套官方的标准，各公司在架构的选择上也有MVC、MVP与MVVM很多种，我们公司一直在使用的是MVP+Dagger的方式，个人感觉不是理想
+的选择，一来代码臃肿，二者也不是很直观。良好的开发架构必然是既能做到良好的解耦，又能提升开发者的开发效率。
 
-在今年的Google IO 2017大会上，关于Android方面的内容的重磅新闻，除了Kotlin正式被纳入官方开发语言以外，就是
-Android Architecture Components。
+好在在今年的Google IO 2017大会上，Google不仅将Kotlin正式纳入官方开发语言，还提出了Android Architecture Components这一套框架。
 
 [Android Architecture Components官方文档](https://developer.android.com/topic/libraries/architecture/index.html)
 
 >A new collection of libraries that help you design robust, testable, and maintainable apps. Start 
 with classes for managing your UI component lifecycle and handling data persistence.
-
 
 简单来说，就是一套基于数据持久化（Room ORM），Repository，ViewModel响应式渲染（LiveData）与Activity/Fragment生命周期处理的
 整体框架。
@@ -33,11 +33,18 @@ with classes for managing your UI component lifecycle and handling data persiste
 - ViewModel：存储UI所需相关数据
 - Room：Google官方的ORM框架，比SQLite更加强大和安全
 
-所以后续的文章会从这4个方面来介绍这套框架。
+这套框架强调以下两点：
+
+```
+1 不要在应用程序组件中保存应用数据，应用组件间也不应该互相依赖。
+2 通过Model驱动UI，并做好数据持久化。
+```
 
 文章目录
 
-- [1Android Architecture Components框架：Activity与Fragment生命周期处理](https://github.com/guoxiaoxing/android-architecture-components/blob/master/doc/1Android Architecture Components框架：Activity与Fragment生命周期处理)
-- [2Android Architecture Components框架：动态数据](https://github.com/guoxiaoxing/android-architecture-components/blob/master/doc/2Android Architecture Components框架：动态数据.md)
-- [3Android Architecture Components框架：数据绑定](https://github.com/guoxiaoxing/android-architecture-components/blob/master/doc/3Android Architecture Components框架：数据绑定.md)
-- [4Android Architecture Components框架：Room ORM框架](https://github.com/guoxiaoxing/android-architecture-components/blob/master/doc/4Android Architecture Components框架：Room ORM框架.md)
+**应用开发架构篇**
+
+- [1应用开发架构篇：Activity与Fragment生命周期处理](https://github.com/guoxiaoxing/android-architecture-components/blob/master/doc/应用开发架构篇/1应用开发架构篇：Activity与Fragment生命周期处理)
+- [2应用开发架构篇：动态数据](https://github.com/guoxiaoxing/android-architecture-components/blob/master/doc/应用开发架构篇/2应用开发架构篇：动态数据.md)
+- [3应用开发架构篇：数据绑定](https://github.com/guoxiaoxing/android-architecture-components/blob/master/doc/应用开发架构篇/3应用开发架构篇：数据绑定.md)
+- [4应用开发架构篇：Room ORM框架](https://github.com/guoxiaoxing/android-architecture-components/blob/master/doc/应用开发架构篇/4应用开发架构篇：Room ORM框架.md)
